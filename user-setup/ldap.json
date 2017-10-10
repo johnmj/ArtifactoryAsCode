@@ -1,0 +1,13 @@
+{
+"key": "newsetting",
+"enabled": true,
+"ldapUrl": "ldap://msldap01.mapscape.nl",
+"userDnPattern": "uid={0}",
+"searchFilter": null,
+"searchBase": null,
+"searchSubTree": false,
+"managerDn": null,
+"managerPassword": null,
+"autoCreateUser": false,
+"emailAttribute": "john.mohan@mapscape.eu"
+}

@@ -1,0 +1,17 @@
+{
+	"key": "backup-weekly",
+	"enabled": true,
+	"cronExp": "0 0 1 ? * SAT",
+	"retentionPeriodHours": 168,
+	"createArchive": false,
+	"precalculate": false,
+	"excludedRepositories": [],
+	"sendMailOnError": true,
+	"excludeBuilds": false,
+	"excludeNewRepositories": false,
+	"excludeRepos": [],
+	"includeRepos": [
+		"example-repo-local"
+	],
+	"incremental": false
+}

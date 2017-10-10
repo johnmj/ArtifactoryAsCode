@@ -1,0 +1,74 @@
+version: '3'
+services:
+  postgresql:
+#   Sourced from https://hub.docker.com/_/postgres/
+    image: postgres:9.5.7-alpine
+    container_name: postgresql
+    ports:
+     - 5432:5432
+    environment:
+     - POSTGRES_DB=artifactory
+     # The following must match the DB_USER and DB_PASSWORD values passed to Artifactory
+     - POSTGRES_USER=artifactory
+     - POSTGRES_PASSWORD=password
+    volumes:
+     - ${FILESTORE}/postgresql:/var/lib/postgresql/data
+     - /etc/localtime:/etc/localtime
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+    restart: always
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-pro:5.4.3
+    container_name: artifactory
+    ports:
+     - 8082:8081
+    depends_on:
+     - postgresql
+    links:
+     - postgresql
+    volumes:
+     - ${FILESTORE}/artifactory:/var/opt/jfrog/artifactory
+     - ./files/tomcat/server.xml:/opt/jfrog/artifactory/tomcat/conf/server.xml
+     - /etc/localtime:/etc/localtime
+    environment:
+     - DB_TYPE=postgresql
+     # The following must match the POSTGRES_USER and POSTGRES_PASSWORD values passed to PostgreSQL
+     - DB_USER=artifactory
+     - DB_PASSWORD=password
+     # Add extra Java options by uncommenting the following line
+     #- EXTRA_JAVA_OPTIONS=-Xmx4g
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+  nginx:
+    image: "nginx"
+    container_name: nginx
+    ports:
+     - 8070:80
+     - 443:443
+     - 6000:6000
+     - 5000:5000
+    depends_on:
+     - artifactory
+    links:
+     - artifactory
+    volumes:
+     - ${FILESTORE}/nginx:/var/opt/jfrog/nginx
+     - ./nginx/conf.d:/etc/nginx/conf.d:ro
+     - /etc/localtime:/etc/localtime
+#    environment:
+#     - ART_BASE_URL=http://artifactory:8081/artifactory
+#     - SSL=true
+    restart: always
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000

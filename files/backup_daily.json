@@ -1,0 +1,17 @@
+{
+	"key": "backup-daily",
+	"enabled": true,
+	"cronExp": "0 0 1 ? * SUN-FRI",
+	"retentionPeriodHours": 0,
+	"createArchive": false,
+	"precalculate": false,
+	"excludedRepositories": [],
+	"sendMailOnError": true,
+	"excludeBuilds": false,
+	"excludeNewRepositories": false,
+	"excludeRepos": [],
+	"includeRepos": [
+		"example-repo-local"
+	],
+	"incremental": true
+}

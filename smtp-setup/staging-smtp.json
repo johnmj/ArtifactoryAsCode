@@ -1,0 +1,12 @@
+{
+	"enabled": true,
+	"host": "smtp.mapscape.nl",
+	"port": 25,
+	"username": null,
+	"password": null,
+	"from": "artifactory@mapscape.eu",
+	"subjectPrefix": "[Artifactory]",
+	"tls": false,
+	"ssl": false,
+	"artifactoryUrl": "http://localhost:8082/artifactory"
+}
