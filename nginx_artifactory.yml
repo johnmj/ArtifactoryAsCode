@@ -32,7 +32,7 @@ services:
      - postgresql
     volumes:
      - ${FILESTORE}/artifactory:/var/opt/jfrog/artifactory
-     - ./files/tomcat/server.xml:/opt/jfrog/artifactory/tomcat/conf/server.xml
+#     - ./files/tomcat/server.xml:/opt/jfrog/artifactory/tomcat/conf/server.xml
      - /etc/localtime:/etc/localtime
     environment:
      - DB_TYPE=postgresql
