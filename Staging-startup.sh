@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export FILESTORE="/data/artifactory"
 ## Invoke prepareHostEnv script
-sudo ./prepareHostEnv.sh -t pro -d $FILESTORE -c -f -l /tmp
+sudo ./prepareHostEnv.sh -t pro -d /data/artifactory -c -f -l /tmp
 ## Bring up the containers
 sudo docker-compose -f nginx_artifactory.yml up -d --build
 echo "Waiting for Artifactory to be initialized....."

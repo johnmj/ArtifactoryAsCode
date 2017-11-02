@@ -12,7 +12,7 @@ services:
      - POSTGRES_USER=artifactory
      - POSTGRES_PASSWORD=password
     volumes:
-     - ${FILESTORE}/postgresql:/var/lib/postgresql/data
+     - /data/artifactory/postgresql:/var/lib/postgresql/data
      - /etc/localtime:/etc/localtime
     restart: always
     ulimits:
@@ -31,8 +31,7 @@ services:
     links:
      - postgresql
     volumes:
-     - ${FILESTORE}/artifactory:/var/opt/jfrog/artifactory
-#     - ./files/tomcat/server.xml:/opt/jfrog/artifactory/tomcat/conf/server.xml
+     - /data/artifactory/artifactory:/var/opt/jfrog/artifactory
      - /etc/localtime:/etc/localtime
     environment:
      - DB_TYPE=postgresql
@@ -60,7 +59,7 @@ services:
     links:
      - artifactory
     volumes:
-     - ${FILESTORE}/nginx:/var/opt/jfrog/nginx
+     - /data/artifactory/nginx:/var/opt/jfrog/nginx
      - ./nginx/conf.d:/etc/nginx/conf.d:ro
      - /etc/localtime:/etc/localtime
 #    environment:

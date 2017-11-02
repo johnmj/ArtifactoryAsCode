@@ -189,8 +189,8 @@ END_NOTES2
 setOS
 validateSudo
 processOptions $*
-cleanDataDir
-createDirectories
+#cleanDataDir
+#createDirectories
 copyFiles
 
 showNotes
