@@ -12,7 +12,8 @@ services:
      - POSTGRES_USER=artifactory
      - POSTGRES_PASSWORD=password
     volumes:
-     - /data/artifactory/postgresql:/var/lib/postgresql/data
+#     - /data/artifactory/postgresql:/var/lib/postgresql/data
+     - /volumes1/postgresql:/var/lib/postgresql/data
      - /etc/localtime:/etc/localtime
     restart: always
     ulimits:

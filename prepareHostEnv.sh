@@ -118,7 +118,8 @@ cleanDataDir () {
 
 createDirectories () {
     echo "Creating ${ROOT_DATA_DIR}"
-    mkdir -p ${ROOT_DATA_DIR}/postgresql
+   # mkdir -p ${ROOT_DATA_DIR}/postgresql
+    mkdir -p /volumes1/postgresql
     if [ "$TYPE" == "pro" ]; then
         mkdir -p ${ROOT_DATA_DIR}/artifactory/etc
     else

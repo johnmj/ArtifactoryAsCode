@@ -18,6 +18,8 @@ curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY
 curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY_URL}/api/repositories/conan-dev" --data @conan-repo.json
 curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY_URL}/api/repositories/docker-local" --data @docker-local-repo.json
 curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY_URL}/api/repositories/docker-dev" --data @docker-dev-virtual-repo.json
+curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY_URL}/api/repositories/docker-prod-local" --data @docker-prod-repo.json
+curl -X PUT -H "Content-Type: application/json" -u admin:password "${ARTIFACTORY_URL}/api/repositories/docker-prod" --data @docker-prod-virtual-repo.json
 cd ..
 #### SETUP CROWD ####
 echo "Setting up CROWD authentication..."
