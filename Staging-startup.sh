@@ -24,7 +24,8 @@ cd ..
 #### SETUP CROWD ####
 echo "Setting up CROWD authentication..."
 cd user-setup
-curl -u admin:password -v -X PUT -H "Content-Type: application/json" "${ARTIFACTORY_URL}/api/crowd" --data @staging-crowd.json
+#curl -u admin:password -v -X PUT -H "Content-Type: application/json" "${ARTIFACTORY_URL}/api/crowd" --data @staging-crowd.json
+curl -u admin:password -v -X PUT -H "Content-Type: application/json" "${ARTIFACTORY_URL}/api/crowd" --data @production-crowd.json
 cd ..
 
 #### SETUP SMTP ####
