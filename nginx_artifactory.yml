@@ -21,7 +21,6 @@ services:
       nofile:
         soft: 32000
         hard: 40000
-    restart: always
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-pro:5.4.3
     container_name: artifactory
@@ -53,8 +52,6 @@ services:
     ports:
      - 8070:80
      - 443:443
-     - 6000:6000
-     - 5000:5000
     depends_on:
      - artifactory
     links:

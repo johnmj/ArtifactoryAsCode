@@ -141,7 +141,7 @@ copyFiles () {
       #  cp -fr ${SCRIPT_DIR}/files/tomcat/server.xml ${ROOT_DATA_DIR}/artifactory//opt/jfrog/artifactory/tomcat/conf
         echo "Copying Artifactory license from ${LIC_PATH}"
         cp -f ${LIC_PATH}/artifactory.lic   ${ROOT_DATA_DIR}/artifactory/etc
-        cp -fr ${SCRIPT_DIR}/plugins ${ROOT_DATA_DIR}/artifactory/etc/plugins        
+        cp -fr ${SCRIPT_DIR}/plugins/* ${ROOT_DATA_DIR}/artifactory/etc/plugins        
     else
         cp -f ${SCRIPT_DIR}/../files/security/communication.key ${ROOT_DATA_DIR}/artifactory/node1
         cp -fr ${SCRIPT_DIR}/../files/access ${ROOT_DATA_DIR}/artifactory/node1/
