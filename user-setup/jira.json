@@ -1,6 +1,6 @@
 {
 "enableIntegration":true,
-"serverUrl":"http://crowd.demo.com",
+"serverUrl":"http://jira.demo.com",
 "applicationName":"artifactory-docker",
 "password":"password",
 "sessionValidationInterval":0,

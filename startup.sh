@@ -22,7 +22,7 @@ cd ..
 #### SETUP CROWD ####
 echo "Setting up CROWD authentication..."
 cd user-setup
-curl -u admin:password -v -X PUT -H "Content-Type: application/json" "${ARTIFACTORY_URL}/api/crowd" --data @crowd.json
+curl -u admin:password -v -X PUT -H "Content-Type: application/json" "${ARTIFACTORY_URL}/api/crowd" --data @jira.json
 cd ..
 
 #### SETUP SMTP ####
