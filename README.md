@@ -1,5 +1,7 @@
 # Artifactory as Code
 
+[Link to Wiki](https://github.com/johnmj/ArtifactoryAsCode/wiki)
+
 ### Description
 The intention of this project is to automate the dockerized deployment and configuration of Artifactory Pro using Nginx as the proxy and Postgres as the database.
 
