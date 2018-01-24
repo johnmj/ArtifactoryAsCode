@@ -79,7 +79,7 @@ It is recommended that the above locations are backed up by IT
 
 ### Detailed overview with docker networking
 
-[[https://github.com/johnmj/ArtifactoryAsCode/blob/master/Gen_Artifactory_Docker_setup.png|alt=Artifactory_Docker_setup]]
+[[https://github.com/johnmj/ArtifactoryAsCode/blob/master/img/Gen_Artifactory_Docker_setup.png|alt=Artifactory_Docker_setup]]
 
 
 * Postgresql database is on ScaleIO (fast) disk while the FILESTORE is in NFS mount.
