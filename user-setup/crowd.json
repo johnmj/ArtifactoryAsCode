@@ -1,8 +1,8 @@
 {
 "enableIntegration":true,
-"serverUrl":"http://msjira01.mapscape.nl:8081",
+"serverUrl":"http://crowd.demo.com",
 "applicationName":"artifactory-docker",
-"password":"1mag3",
+"password":"password",
 "sessionValidationInterval":0,
 "useDefaultProxy":false,
 "noAutoUserCreation":false,

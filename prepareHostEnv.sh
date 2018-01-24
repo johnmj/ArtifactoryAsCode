@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is not to be invoked directly. Should be triggered by "startup.sh"
+
 # This file is for preparing all the needed files and directories on the host.
 # These directories are mounted into the Docker containers.
 
@@ -137,8 +139,6 @@ copyFiles () {
     echo "Artifactory configuration files"
     if [ "$TYPE" == "pro" ]; then
         cp -f ${SCRIPT_DIR}/files/security/communication.key ${ROOT_DATA_DIR}/artifactory/etc
-#        cp -fr ${SCRIPT_DIR}/files/access ${ROOT_DATA_DIR}/artifactory/
-      #  cp -fr ${SCRIPT_DIR}/files/tomcat/server.xml ${ROOT_DATA_DIR}/artifactory//opt/jfrog/artifactory/tomcat/conf
         echo "Copying Artifactory license from ${LIC_PATH}"
         cp -f ${LIC_PATH}/artifactory.lic   ${ROOT_DATA_DIR}/artifactory/etc
         cp -fr ${SCRIPT_DIR}/plugins/* ${ROOT_DATA_DIR}/artifactory/etc/plugins        
@@ -190,8 +190,8 @@ END_NOTES2
 setOS
 validateSudo
 processOptions $*
+## The below function calls are to be enabled only on the first run or if the existing installation is to be overwritten;
 #cleanDataDir
 #createDirectories
 copyFiles
-
 showNotes

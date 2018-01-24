@@ -3,7 +3,7 @@
 # This script configures artifactory backup policies
 # It uses the REST api.
 # Invoke this script when the REST api is available
-# Copyright (c) 2017. Mapscape B.V. All rights reserved
+# Copyright (c) 2017. Demo.com All rights reserved
 ##############################################################################
 
 ##############################################################################
